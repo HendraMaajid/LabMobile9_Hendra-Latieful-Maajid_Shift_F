@@ -14,6 +14,7 @@ H1D022018
   });
   ```
 <img src="login1.png" alt="Login Screenshot" width="300"/>
+
 ### 2. Proses Login Google
 - Muncul popup pilih akun Google
 - Pengguna memilih akun yang ingin digunakan
@@ -24,6 +25,7 @@ H1D022018
   - Foto Profil
 <img src="login2.png" alt="Login Screenshot" width="300"/>
 <img src="login3.png" alt="Login Screenshot" width="300"/>
+
 ### 3. Pembuatan Kredensial Firebase
 - Membuat kredensial Firebase menggunakan ID Token
   ```typescript
