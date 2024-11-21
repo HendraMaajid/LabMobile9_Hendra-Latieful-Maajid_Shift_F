@@ -52,7 +52,7 @@ H1D022018
   ```typescript
   router.push("/home");
   ```
-  <img src="home.png" alt="Login Screenshot" width="200"/>
+  <img src="home.png" width="300"/>
 
 ### 7. Menampilkan informasi user di profile
 - mengambil data informasi user seperti nama user, email user, dan foto profile.
@@ -79,3 +79,4 @@ const user = computed(() => authStore.user);
     </ion-item>
 </ion-list>
 ```
+<img src="profile.png" width="300"/>
