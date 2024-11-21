@@ -1,6 +1,8 @@
 # Alur Autentikasi Google: Dari Login Hingga Mendapatkan Profil
-Hendra Latieful Maajid
-H1D022018
+- Hendra Latieful Maajid
+- H1D022018
+- Shift Baru F
+- Shift KRS D
 ## Proses Autentikasi Step by Step
 
 ### 1. Inisialisasi Google Auth
