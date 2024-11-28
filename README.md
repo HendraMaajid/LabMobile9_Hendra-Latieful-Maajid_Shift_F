@@ -200,24 +200,24 @@ const handleDelete = async (deleteTodo) => {
 
 ## Cara konversi ke APK
 1. Lakukan command ionic build untuk membangun aplikasi ionic ke produksi
-<img src="convert1.png" width="300"/> 
+<img src="convert1.png" width="500"/> 
 
 2. Lakukan command ionic capacitor build android  untuk membangun aplikasi Ionic dan mengintegrasikannya ke Android
-<img src="convert2.png" width="300"/> 
+<img src="convert2.png" width="500"/> 
 
 3. Tunggu sampai prosesnya selesai maka nanti dari command tersebut akan memanggil android studio untuk membuild aplikasi ionic kita ke android
-<img src="convert3.png" width="300"/> 
+<img src="convert3.png" width="500"/> 
 
 4. Tunggu Gradle Buildingnya sampai selesai, jika sudah pilih menu build > build app bundle > build apk. Nah tujuannya disini adalah untuk membangun aplikasi kita kedalam bentuk apk yang bisa diinstal di smartphone kita
-<img src="convert4.png" width="300"/> 
+<img src="convert4.png" width="500"/> 
 
 5. Tunggu lagi sampai selesai, lalu jika sudah selesai pilih locate untuk melihat file kita ada didirektori mana
-<img src="convert5.png" width="300"/> 
-<img src="convert6.png" width="300"/> 
+<img src="convert5.png" width="500"/> 
+<img src="convert6.png" width="500"/> 
 
 6. Kirim aplikasi ke smartphone kalian lalu install aplikasinya
-<img src="hp1.png" width="300"/> 
-<img src="hp2.png" width="300"/> 
+<img src="hp1.jpg" width="300"/> 
+<img src="hp2.jpg" width="300"/> 
 
 7. Sekarang kita setup firebase kita agar aplikasi android kita bisa berjalan
 8. Masuk ke firebase console lalu pilih project settings > add app (pilih yang android) jadi yang awalnya kita hanya ada web sekarang kita tambahkan untuk android
@@ -227,15 +227,16 @@ const handleDelete = async (deleteTodo) => {
 gradlew signingReport
 ```
 untuk mendapatkan kode SHA-1 dan SHA-256
-<img src="convert7.png" width="300"/> 
+
+<img src="convert7.png" width="500"/> 
 
 11. Masukkan kodenya saat menambahkan app androidnya di firebase lalu ikuti saja alurnya sampai selesai
-<img src="convert8.png" width="300"/> 
-<img src="convert9.png" width="300"/> 
+<img src="convert8.png" width="500"/> 
+<img src="convert9.png" width="500"/> 
 
 12. Sekarang coba masuk ke aplikasinya lalu login dan jalankan crudnya
-<img src="hp3.png" width="300"/> 
-<img src="hp4.png" width="300"/> 
+<img src="hp3.jpg" width="300"/> 
+<img src="hp4.jpg" width="300"/> 
 
 
 # Alur Autentikasi Google: Dari Login Hingga Mendapatkan Profil
