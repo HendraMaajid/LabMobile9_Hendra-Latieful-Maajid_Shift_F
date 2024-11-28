@@ -9,14 +9,14 @@
 ### Alur Proses Pembuatan Todo
 1. **Interaksi Pengguna**
    - Pengguna menekan tombol "+" di pojok kanan bawah layar
-   - Modal input terbuka dengan form judul dan deskripsi todo
+   - Modal input muncul dengan form judul dan deskripsi todo
 
 2. **Validasi Input**
    - Sistem memeriksa apakah judul todo telah diisi
-   - Jika judul kosong, akan muncul pesan peringatan
+   - Jika judul kosong, bakal muncul alert
 
 3. **Proses Pembuatan**
-   - Data todo disiapkan dengan properti:
+   - Data todo yang diminta:
      * Judul (wajib)
      * Deskripsi (opsional)
      * Status awal: Aktif (false)
@@ -28,7 +28,7 @@
    - Setiap todo memiliki ID unik yang dibuat otomatis
    - Setelah berhasil, daftar todo diperbarui
 
-### Contoh Kode Utama
+### Kode Utama
 ```typescript
 // Proses tambah todo
 const handleSubmit = async (todo) => {
@@ -54,11 +54,16 @@ const handleSubmit = async (todo) => {
 };
 ```
 
+### Screenshoot
+<img src="crud1.png" width="300"/>
+<img src="crud2.png" width="300"/>
+<img src="crud3.png" width="300"/>
+
 ## 2. Read (Membaca/Menampilkan Todo)
 
 ### Alur Proses Pembacaan Todo
 1. **Inisialisasi Halaman**
-   - Saat halaman pertama kali dimuat, sistem melakukan:
+   - Saat halaman pertama kali dimuat, sistem akan melakukan:
      * Menampilkan loading
      * Mengambil semua todo dari Firestore
      * Menyembunyikan loading
@@ -76,7 +81,7 @@ const handleSubmit = async (todo) => {
    - Waktu relatif ditampilkan untuk setiap todo
    - Pembaruan waktu otomatis setiap 1 menit
 
-### Contoh Kode Utama
+### Kode Utama
 ```typescript
 // Memuat todo
 const loadTodos = async (isLoading = true) => {
@@ -97,12 +102,17 @@ const loadTodos = async (isLoading = true) => {
 };
 ```
 
+### Screenshoot
+<img src="crud3.png" width="300"/>
+<img src="crud4.png" width="300"/>
+<img src="crud5.png" width="300"/>
+
 ## 3. Update (Memperbarui Todo)
 
 ### Alur Proses Pembaruan
 1. **Memulai Edit**
-   - Pengguna menggeser todo atau menekan ikon edit
-   - Modal edit terbuka dengan data todo yang dipilih
+   - Pengguna menggeser todo lalu menekan ikon edit
+   - Modal edit akan muncul dengan data todo yang dipilih
 
 2. **Proses Editing**
    - Form diisi dengan data todo saat ini
@@ -113,7 +123,7 @@ const loadTodos = async (isLoading = true) => {
    - Waktu pembaruan diperbarui
    - Daftar todo dimuat ulang
 
-### Contoh Kode Utama
+### Kode Utama
 ```typescript
 // Memulai proses edit
 const handleEdit = async (editTodo) => {
@@ -147,20 +157,24 @@ const handleSubmit = async (todo) => {
 };
 ```
 
+### Screenshoot
+<img src="crud6.png" width="300"/>
+<img src="crud7.png" width="300"/>
+
 ## 4. Delete (Menghapus Todo)
 
 ### Alur Proses Penghapusan
 1. **Inisiasi Hapus**
    - Pengguna menggeser todo ke kiri
    - Tombol hapus berwarna merah muncul
-   - Pengguna mengkonfirmasi atau langsung menggeser
+   - Tekan tombol berwarna merah tersebut
 
 2. **Proses Penghapusan**
    - Todo dihapus dari Firestore
    - Daftar todo dimuat ulang
    - Notifikasi berhasil dihapus ditampilkan
 
-### Contoh Kode Utama
+### Kode Utama
 ```typescript
 // Proses hapus todo
 const handleDelete = async (deleteTodo) => {
@@ -180,6 +194,48 @@ const handleDelete = async (deleteTodo) => {
 };
 ```
 
+### Screenshoot
+<img src="crud9.png" width="300"/>
+<img src="crud10.png" width="300"/>
+
+## Cara konversi ke APK
+1. Lakukan command ionic build untuk membangun aplikasi ionic ke produksi
+<img src="convert1.png" width="300"/> 
+
+2. Lakukan command ionic capacitor build android  untuk membangun aplikasi Ionic dan mengintegrasikannya ke Android
+<img src="convert2.png" width="300"/> 
+
+3. Tunggu sampai prosesnya selesai maka nanti dari command tersebut akan memanggil android studio untuk membuild aplikasi ionic kita ke android
+<img src="convert3.png" width="300"/> 
+
+4. Tunggu Gradle Buildingnya sampai selesai, jika sudah pilih menu build > build app bundle > build apk. Nah tujuannya disini adalah untuk membangun aplikasi kita kedalam bentuk apk yang bisa diinstal di smartphone kita
+<img src="convert4.png" width="300"/> 
+
+5. Tunggu lagi sampai selesai, lalu jika sudah selesai pilih locate untuk melihat file kita ada didirektori mana
+<img src="convert5.png" width="300"/> 
+<img src="convert6.png" width="300"/> 
+
+6. Kirim aplikasi ke smartphone kalian lalu install aplikasinya
+<img src="hp1.png" width="300"/> 
+<img src="hp2.png" width="300"/> 
+
+7. Sekarang kita setup firebase kita agar aplikasi android kita bisa berjalan
+8. Masuk ke firebase console lalu pilih project settings > add app (pilih yang android) jadi yang awalnya kita hanya ada web sekarang kita tambahkan untuk android
+9. Setelah itu ikuti semua langkah langkahnya nah untuk nama package androidnya itu didapatkan dari file capacitor.config.ts di bagian appId itu copy saja lalu pastekan di package namenya
+10. jalankan perintah 
+```cmd
+gradlew signingReport
+```
+untuk mendapatkan kode SHA-1 dan SHA-256
+<img src="convert7.png" width="300"/> 
+
+11. Masukkan kodenya saat menambahkan app androidnya di firebase lalu ikuti saja alurnya sampai selesai
+<img src="convert8.png" width="300"/> 
+<img src="convert9.png" width="300"/> 
+
+12. Sekarang coba masuk ke aplikasinya lalu login dan jalankan crudnya
+<img src="hp3.png" width="300"/> 
+<img src="hp4.png" width="300"/> 
 
 
 # Alur Autentikasi Google: Dari Login Hingga Mendapatkan Profil
