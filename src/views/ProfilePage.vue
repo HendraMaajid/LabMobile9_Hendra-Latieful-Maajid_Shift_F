@@ -32,7 +32,7 @@
             </ion-list>
 
             <!-- Tabs Menu -->
-            <TabsMenu />
+            
         </ion-content>
 
     </ion-page>
@@ -52,7 +52,7 @@ const logout = () => {
     authStore.logout();
 };
 
-const userPhoto = ref(user.value?.photoURL || 'https://ionicframework.com/docs/img/demos/avatar.svg');
+const userPhoto = ref(user.value?.photoURL);
 console.log('User Photo URL:', userPhoto.value);
 
 function handleImageError() {
